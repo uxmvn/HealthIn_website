@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthIn ChatBot</title>
+  <style>
+    /* Base Styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #5a9183;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Chatbot Container */
+    .chatbot-container {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 3px solid #6ca184;
+    }
+
+    /* Chat Header */
+    .chat-header {
+      background-color: #92bdb0;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: white;
+      position: relative;
+    }
+
+    .chat-header img {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      border-radius: 50%;
+    }
+
+    /* Chat Display */
+    .chat-display {
+      padding: 15px;
+      flex: 1;
+      background-color: #f9f9f9;
+      overflow-y: auto;
+    }
+
+    /* Chat Bubble */
+    .chat-bubble {
+      margin: 10px 0;
+      padding: 10px 15px;
+      border-radius: 10px;
+      max-width: 80%;
+    }
+
+    .chat-bubble.user {
+      background-color: #5a9183;
+      color: white;
+      align-self: flex-end;
+    }
+
+    .chat-bubble.bot {
+      background-color: #92bdb0;
+      color: white;
+      align-self: flex-start;
+    }
+
+    /* Input Section */
+    .chat-input {
+      display: flex;
+      padding: 10px;
+      background-color: #e3ebea;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid #6ca184;
+      border-radius: 5px;
+      font-size: 1em;
+      outline: none;
+    }
+
+    .chat-input button {
+      background-color: #6ca184;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-left: 10px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .chat-input button:hover {
+      background-color: #5a9183;
+    }
+  </style>
+</head>
+<body>
+  <div class="chatbot-container">
+    <div class="chat-header">
+      <img src="logo.jpg" alt="HealthIn Logo">
+      HealthIn ChatBot
+    </div>
+    <div class="chat-display" id="chatDisplay">
+      <div class="chat-bubble bot">Hello! I’m your HealthIn ChatBot. How can I assist you today?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type your message here...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const message = input.value.trim();
+
+      if (message === "") return;
+
+      // Add user message to chat display
+      const chatDisplay = document.getElementById("chatDisplay");
+      const userBubble = document.createElement("div");
+      userBubble.className = "chat-bubble user";
+      userBubble.textContent = message;
+      chatDisplay.appendChild(userBubble);
+
+      // Clear input
+      input.value = "";
+
+      // Add bot response (mock response for now)
+      setTimeout(() => {
+        const botBubble = document.createElement("div");
+        botBubble.className = "chat-bubble bot";
+        botBubble.textContent = generateResponse(message);
+        chatDisplay.appendChild(botBubble);
+
+        // Scroll to bottom
+        chatDisplay.scrollTop = chatDisplay.scrollHeight;
+      }, 1000);
+    }
+
+    function generateResponse(message) {
+      // Simple responses for demo
+      const responses = {
+        hi: "Hello! How can I help you with your health today?",
+        hello: "Hi there! Feel free to ask me any health-related questions.",
+        help: "Sure! Please let me know what health-related assistance you need.",
+        default: "I’m here to assist you. Could you please elaborate on your query?"
+      };
+
+      return responses[message.toLowerCase()] || responses.default;
+    }
+  </script>
+</body>
+</html>
