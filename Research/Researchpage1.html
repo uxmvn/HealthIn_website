@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Researcher Data Request</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3ebea; /* Light background */
+            color: #333; /* Darker text for readability */
+        }
+
+        /* Container for form */
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff; /* White background for contrast */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #5a9183; /* Muted green */
+            margin-bottom: 20px;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #6ca184; /* Soft green for labels */
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #92bdb0; /* Border color from palette */
+            border-radius: 4px;
+            font-size: 14px;
+            transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #5a9183; /* Focus effect */
+            outline: none;
+            box-shadow: 0 0 5px rgba(90, 145, 131, 0.5);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        /* CAPTCHA styling */
+        .captcha-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Submit button */
+        button {
+            background-color: #6ca184; /* Gentle green */
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #5a9183; /* Slightly darker green */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Highlight required fields */
+        .required {
+            color: #e74c3c; /* Red for emphasis */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Researcher Data Request Form</h2>
+        
+        <form action="#" method="post">
+            <!-- Subject -->
+            <label for="subject">Subject <span class="required">*</span></label>
+            <input type="text" id="subject" placeholder="Enter Subject" required>
+
+            <!-- Full Name -->
+            <label for="full-name">Your Full Name <span class="required">*</span></label>
+            <input type="text" id="full-name" placeholder="Enter Your Full Name" required>
+
+            <!-- Email -->
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" placeholder="Enter Your Email" required>
+
+            <!-- Company -->
+            <label for="company">Company/Location <span class="required">*</span></label>
+            <input type="text" id="company" placeholder="Enter Company or Location" required>
+
+            <!-- Contact -->
+            <label for="contact">Contact No <span class="required">*</span></label>
+            <input type="tel" id="contact" placeholder="Enter Contact Number" required>
+
+            <!-- CNIC -->
+            <label for="cnic">CNIC <span class="required">*</span></label>
+            <input type="text" id="cnic" placeholder="Enter CNIC" required>
+
+            <!-- Mailing Address -->
+            <label for="address">Mailing Address</label>
+            <textarea id="address" rows="3" placeholder="Enter Mailing Address"></textarea>
+
+            <!-- Message -->
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="Write Your Message"></textarea>
+
+            <!-- CAPTCHA -->
+            <div class="captcha">
+                <label>CAPTCHA <span class="required">*</span></label>
+                <div class="captcha-placeholder">
+                    <input type="checkbox" id="captcha">
+                    <label for="captcha">I'm not a robot</label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

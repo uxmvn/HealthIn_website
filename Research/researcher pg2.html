@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Researcher Data Details</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3ebea; /* Light gray background */
+            color: #333; /* Dark text for readability */
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff; /* White background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #5a9183; /* Muted green */
+            margin-bottom: 20px;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #6ca184; /* Soft green */
+        }
+
+        input, textarea, select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #92bdb0;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #5a9183;
+            outline: none;
+            box-shadow: 0 0 5px rgba(90, 145, 131, 0.5);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        /* Submit button styling */
+        button {
+            background-color: #6ca184;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #5a9183;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Additional Data Request Information</h2>
+        <form action="#" method="post">
+            <!-- Type of Data -->
+            <label for="data-type">What Kind of Data Do You Need? <span class="required">*</span></label>
+            <select id="data-type" required>
+                <option value="">Select Data Type</option>
+                <option value="AI/ML Performance Metrics">AI/ML Performance Metrics</option>
+                <option value="Symptom Analysis Data">Symptom Analysis Data</option>
+                <option value="Consultation Logs">Consultation Logs</option>
+                <option value="Medical History of patients">Medical History of patients</option>
+                <option value="Patient Demographics">Patient Demographics</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <!-- Purpose -->
+            <label for="purpose">Purpose of Data Request <span class="required">*</span></label>
+            <textarea id="purpose" rows="3" placeholder="Explain the purpose of your request" required></textarea>
+
+            <!-- How Data Will Be Used -->
+            <label for="data-usage">How Will the Data Be Used? <span class="required">*</span></label>
+            <textarea id="data-usage" rows="3" placeholder="Explain how you intend to use the data" required></textarea>
+
+            <!-- Duration -->
+            <label for="duration">How Long Do You Need the Data For? <span class="required">*</span></label>
+            <input type="text" id="duration" placeholder="e.g., 1 month, 6 months" required>
+
+            <!-- Target Audience -->
+            <label for="audience">Who Is the Target Audience for This Data?</label>
+            <textarea id="audience" rows="3" placeholder="Explain the target audience for the data"></textarea>
+
+            <!-- Additional Comments -->
+            <label for="comments">Additional Comments or Requirements</label>
+            <textarea id="comments" rows="3" placeholder="Include any specific details or requirements"></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Details</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e3ebea;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: #5c7184; /* Muted blue for normal state */
+            font-weight: 600;
+            padding: 10px;
+            border-radius: 5px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fff; /* Text color change on hover */
+            background-color: #1b9c85; /* Green background on hover */
+        }
+
+        nav a.active {
+            color: #fff;
+            background-color: #1b9c85;
+            border-radius: 5px;
+        }
+
+        .doctor-dashboard {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 1200px;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            color: #5a9183;
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        header p {
+            color: #6ca184;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .chatbot-recommendations {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .chatbot-recommendations h2 {
+            color: #6ca184;
+            border-bottom: 2px solid #92bdb0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .chatbot-recommendations label {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #5a9183; /* Match the color of the accuracy rate and common diseases headers */
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .chatbot-recommendations textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 1.1em;
+            resize: none;
+            margin-bottom: 15px;
+        }
+
+        .chatbot-recommendations button {
+            background-color: #5a9183;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            font-size: 1.2em;
+        }
+
+        .chatbot-recommendations button:hover {
+            background-color: #1b9c85;
+        }
+
+        .accuracy-and-trends {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .accuracy, .common-diseases {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        .accuracy h2, .common-diseases h2 {
+            color: #6ca184;
+            border-bottom: 2px solid #92bdb0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+
+        .accuracy p {
+            font-size: 1.2em;
+        }
+
+        .accuracy p span {
+            font-weight: bold;
+            color: #5a9183;
+        }
+
+        .common-diseases ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .common-diseases li {
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        .appointments {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .appointments h2 {
+            color: #6ca184;
+            border-bottom: 2px solid #92bdb0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+
+        .appointments ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .appointments li {
+            background-color: #92bdb0;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .appointments li:hover {
+            background-color: #6ca184;
+        }
+    </style>
+</head>
+<body>
+    <!-- Doctor Dashboard -->
+    <div class="doctor-dashboard">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Appointments</a>
+            <a href="#">Logout</a>
+        </nav>
+        <header>
+            <h1>Welcome, Dr. [Name]!</h1>
+            <p>Your personalized dashboard to manage recommendations and appointments</p>
+        </header>
+        <div class="content">
+            <div class="chatbot-recommendations">
+                <h2>Chatbot Recommendations for Symptoms</h2>
+                <p>Here you can view the medicines and tests recommended by the chatbot based on patient symptoms. You can update these recommendations as needed.</p>
+                <div>
+                    <label for="medicines">Recommended Medicines:</label>
+                    <textarea id="medicines" rows="4" cols="50">List of medicines...</textarea>
+                </div>
+                <div>
+                    <label for="tests">Recommended Tests:</label>
+                    <textarea id="tests" rows="4" cols="50">List of tests...</textarea>
+                </div>
+                <button>Update Recommendations</button>
+            </div>
+            <div class="accuracy-and-trends">
+                <div class="accuracy">
+                    <h2>Accuracy of Recommended Tests</h2>
+                    <p>Accuracy Rate: <span>85%</span></p>
+                </div>
+                <div class="common-diseases">
+                    <h2>Common Diseases</h2>
+                    <ul>
+                        <li>Influenza</li>
+                        <li>COVID-19</li>
+                        <li>Common Cold</li>
+                        <li>Diabetes</li>
+                        <li>Hypertension</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="appointments">
+                <h2>Upcoming Appointments</h2>
+                <ul>
+                    <li>Patient 1 - Date and Time</li>
+                    <li>Patient 2 - Date and Time</li>
+                    <li>Patient 3 - Date and Time</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

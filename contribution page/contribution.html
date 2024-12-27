@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>contributions</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<style>
+    body {
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #e3efeb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    size: 26px;
+    font-weight: bold;
+    color: #333;
+}
+
+header .logo span {
+    color: #1b9c85; /* Medical green */
+}
+
+/* Logo Image */
+.logo-img {
+    height: 40px; /* Adjust the size as needed */
+    width: auto;
+    margin-right: 10px; /* Space between logo and text */
+    vertical-align: middle; /* Aligns the image vertically with the text */
+}
+/* To prevent the logo link from affecting its appearance */
+.logo-link {
+    text-decoration: none; /* Remove the underline */
+    color: inherit; /* Inherit the color of the logo text */
+}
+.search-bar {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #79b8af;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-bar:focus {
+    border-color: #66cc66;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    color: #5c7184; /* Muted blue for normal state */
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners for a smoother look */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    
+}
+
+/* Hover Effect */
+nav a:hover {
+    color: #fff; /* Text color change on hover */
+    background-color: #1b9c85; /* Green background on hover */
+    color: transparent;
+}
+
+/* Active Link Style (optional) */
+nav a.active {
+    color: #fff;
+    background-color: #1b9c85; /* Active link has green background */
+    border-radius: 5px;
+}
+
+
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f9f8;
+    color: #5c7184;
+}
+
+/* Dashboard Section */
+.dashboard {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #e3ebea, #c9e7e1);
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 1100px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard h2 {
+    font-size: 32px;
+    color: #1b9c85;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.dashboard p {
+    font-size: 18px;
+    color: #5a9183;
+    margin-bottom: 30px;
+}
+
+/* Options Grid */
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Cards */
+.card {
+    background-color: #ffffff;
+    width: 260px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: #5c7184;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f1f9f8;
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #1b9c85;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #5c7184;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #1b9c85;
+    color: white;
+    padding: 15px 20px;
+    font-size: 16px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+    font-weight: bold;
+}
+</style>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Logo with Image -->
+        <div class="logo">
+            
+            
+            Health<span>In</span>
+        </div>
+       <!-- Search Bar Section -->
+<section class="search-section">
+    <input type="text" placeholder="Search for medical conditions..." class="search-bar">
+</section>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <a href="#">Login</a>
+          
+        </nav>
+         
+
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <h2>Welcome, Dr. [Name]</h2>
+            <p>Select an option to contribute to the community:</p>
+            <div class="options">
+                <a href="#" class="card upload">
+                    <h3>Upload Articles</h3>
+                    <p>Share knowledge through written articles.</p>
+                </a>
+                <a href="#" class="card upload">
+                    <h3>Upload Blogs</h3>
+                    <p>Write blogs to help educate the audience.</p>
+                </a>
+                <a href="#" class="card upload">
+                    <h3>Upload Videos</h3>
+                    <p>Share informative videos for better understanding.</p>
+                </a>
+                <a href="#" class="card manage">
+                    <h3>Manage Content</h3>
+                    <p>Edit or delete your existing contributions.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 HealthIn | Empowering Health Professionals</p>
+    </footer>
+</body>
+</html>
