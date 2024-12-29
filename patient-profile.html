@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Dashboard</title>
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Importing Google Font: Roboto -->
+ 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -157,24 +157,24 @@
 
         .id-card {
     width: 350px;
-    height: 200px; /* Manually define the card's height */
+    height: 200px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
     position: absolute;
     top: 145px;
     right: 60px;
-    display: flex; /* Enables flexbox */
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    background-color: #f8f9fa; /* Optional background */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f8f9fa; 
 }
 
 .id-card img {
-    width: 122%; /* Enlarges the image */
-    height: 112%; /* Manually set the height of the image */
-    object-fit: cover; /* Ensures the image fills the container */
-    border-radius: 5px; /* Optional rounded corners */
+    width: 122%; 
+    height: 112%; 
+    object-fit: cover; 
+    border-radius: 5px; 
 }
 
         .action-buttons {
@@ -254,7 +254,7 @@
             margin: 5px 0;
         }
 
-        /* Styling for hyperlinks */
+      
         .report-links a {
             text-decoration: none;
             color: #5a9183;
@@ -307,15 +307,15 @@
         }
 
         .appointment-details .contact-btn img {
-    width: 150%;  /* Fill the button with the icon */
-    height: 150%; /* Fill the button with the icon */
-    object-fit: contain; /* Ensure the icon is fully contained inside the button */
+    width: 150%; 
+    height: 150%; 
+    object-fit: contain; 
 }
 
 .appointment-details .calendar-btn img {
-    width: 200%;  /* Fill the button with the icon */
-    height: 200%; /* Fill the button with the icon */
-    object-fit: contain; /* Ensure the icon is fully contained inside the button */
+    width: 200%; 
+    height: 200%; 
+    object-fit: contain; 
 }
     .appointment-details button:hover {
     background: #92bdb0; 
@@ -361,9 +361,84 @@
             background-color: #f0f0f0;
             margin-top: 20px; 
         }
+
+        /* General Styles */
+* {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Logo Styles */
+.logo-img {
+    height: 40px;
+    vertical-align: middle;
+}
+
+/* Header and Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: #e3efeb;
+    font-weight: bold;
+    font-size: 25px;
+    align-items: center;
+}
+
+header .logo span {
+    color: #1b9c85;
+}
+nav a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    padding: 20px;
+    font-size: 18px;
+}
+nav a:hover{
+    color: #41afa1;
+    transition: color 0.5s;
+}
+
+.search-bar {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #cccccc;
+    border-radius: 25px;
+    font-size: 15px;
+}
     </style>
 </head>
 <body>
+
+    <header>
+        <!-- Logo with Image -->
+        <div class="logo">
+            <img src="logo.jpg" alt="HealthIn Logo" class="logo-img">
+            Health<span>In</span>
+        </div>
+
+        <!-- Search Bar Section -->
+        <section class="search-section">
+            <input type="text" placeholder="Search for medical conditions..." class="search-bar">
+        </section>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <a href="#">Login</a>
+        </nav>
+    </header>
+
+
+
+
     <div class="picture-container">
     </div>
     <div class="floating-bar">
@@ -431,10 +506,8 @@
                             <span class="tooltip">Add to Calendar</span>
                         </button>
                         
-                        <!-- Cancel Appointment Button -->
+                       
                         <button class="cancel">Cancel Appointment</button>
-                        
-                        <!-- Contact Doctor Button -->
                         <button class="contact-btn">
                             <img src="contact.jpg" alt="Message" class="message-icon">
                             <span class="tooltip">Contact Doctor</span>
@@ -450,7 +523,8 @@
         <div class="blank-section"></div>
     </div>
     <footer>
-        <p>Contact us at support@HealthIn.com | All Rights Reserved 2024</p>
+        <p>Contact us at Ph:051-9281111,Fax: 051-9281357 </p>
+        <p> Email:info@HealthIn.gop.pk </p>
     </footer>
 </body>
 </html>

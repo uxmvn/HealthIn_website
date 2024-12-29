@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HealthIn ChatBot</title>
   <style>
-    /* Base Styling */
+   
     body {
       font-family: Arial, sans-serif;
       background-image: url('background.jpg');
@@ -20,20 +20,20 @@
       justify-content: center;
     }
 
-    /* Chatbot Container */
+   
     .chatbot-container {
       background-color: #ffffff;
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
+      width: 100%; 
+      height: 100%; 
       display: flex;
       flex-direction: column;
       overflow: hidden;
       border: 3px solid #6ca184;
     }
 
-    /* Chat Header */
+   
     .chat-header {
       background-color: #92bdb0;
       padding: 15px;
@@ -53,7 +53,7 @@
       border-radius: 50%;
     }
 
-    /* Chat Display */
+    
     .chat-display {
       padding: 15px;
       flex: 1;
@@ -61,7 +61,7 @@
       overflow-y: auto;
     }
 
-    /* Chat Bubble */
+   
     .chat-bubble {
       margin: 10px 0;
       padding: 10px 15px;
@@ -81,7 +81,7 @@
       align-self: flex-start;
     }
 
-    /* Input Section */
+
     .chat-input {
       display: flex;
       padding: 10px;
@@ -111,14 +111,82 @@
     .chat-input button:hover {
       background-color: #5a9183;
     }
+    /* General Styles */
+* {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Logo Styles */
+.logo-img {
+    height: 40px;
+    vertical-align: middle;
+}
+
+/* Header and Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: #e3efeb;
+    font-weight: bold;
+    font-size: 25px;
+    align-items: center;
+}
+
+header .logo span {
+    color: #1b9c85;
+}
+nav a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    padding: 20px;
+    font-size: 18px;
+}
+nav a:hover{
+    color: #41afa1;
+    transition: color 0.5s;
+}
+
+.search-bar {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #cccccc;
+    border-radius: 25px;
+    font-size: 15px;
+}
   </style>
 </head>
 <body>
+
+  
   <div class="chatbot-container">
-    <div class="chat-header">
-      <img src="logo.jpg" alt="HealthIn Logo">
-      HealthIn ChatBot
-    </div>
+    <header>
+      <!-- Logo with Image -->
+      <div class="logo">
+          <img src="logo.jpg" alt="HealthIn Logo" class="logo-img">
+          Health<span>In</span>
+      </div>
+
+      <!-- Search Bar Section -->
+      <section class="search-section">
+          <input type="text" placeholder="Search for medical conditions..." class="search-bar">
+      </section>
+
+      <nav>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+          <a href="#">Login</a>
+      </nav>
+  </header>
+  
     <div class="chat-display" id="chatDisplay">
       <div class="chat-bubble bot">Hello! I’m your HealthIn ChatBot. How can I assist you today?</div>
     </div>
@@ -135,30 +203,30 @@
 
       if (message === "") return;
 
-      // Add user message to chat display
+     
       const chatDisplay = document.getElementById("chatDisplay");
       const userBubble = document.createElement("div");
       userBubble.className = "chat-bubble user";
       userBubble.textContent = message;
       chatDisplay.appendChild(userBubble);
 
-      // Clear input
+     
       input.value = "";
 
-      // Add bot response (mock response for now)
+      
       setTimeout(() => {
         const botBubble = document.createElement("div");
         botBubble.className = "chat-bubble bot";
         botBubble.textContent = generateResponse(message);
         chatDisplay.appendChild(botBubble);
 
-        // Scroll to bottom
+      
         chatDisplay.scrollTop = chatDisplay.scrollHeight;
       }, 1000);
     }
 
     function generateResponse(message) {
-      // Simple responses for demo
+   
       const responses = {
         hi: "Hello! How can I help you with your health today?",
         hello: "Hi there! Feel free to ask me any health-related questions.",
